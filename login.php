@@ -8,20 +8,20 @@ if(isset($_POST['cadastrar'])){
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $escolha = $_POST['escolha'];
+    
 
 
     $has = password_hash($password, PASSWORD_DEFAULT);
 
-    if(empty($name) or empty($email) or empty($password) or empty($escolha)){
+    if(empty($name) or empty($email) or empty($password)){
         $mensagem = "Precisa preencher todos os campos!";
     }else{
         
-        $sql = "INSERT INTO func(name,email,password,escolha) VALUES(?,?,?,?)";
+        $sql = "INSERT INTO func(name,email,password) VALUES(?,?,?)";
 
         $stmt = $c->prepare($sql);
 
-        $stmt->bind_param("ssss", $name, $email, $has, $escolha);
+        $stmt->bind_param("sss", $name, $email, $has);
 
         if($stmt->execute()){
             include_once 'medico.php';
