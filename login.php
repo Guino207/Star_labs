@@ -51,7 +51,6 @@ if(isset($_POST['login'])){
             $_SESSION['usuario_id'] = $usuario['id'];
             $_SESSION['username'] = $usuario['username'];
             $_SESSION['usuario_email'] = $usuario['email'];
-            $_SESSION['usuario_escolha'] = $usuario['escolha'];
 
             header("Location: medico.php");
             exit();
@@ -90,14 +89,6 @@ if(isset($_POST['login'])){
             <input type="email" placeholder="Digite o e-mail" name="email" required>
             <input type="password" placeholder="Digite a senha" name="senha" required>
             <input type="password" name="password" placeholder="Confirme a senha" required>
-
-            
-                <select name="escolha" id="especialidade" required> 
-                    <option value = "">Sector...</option>
-                    <option value = "dotor">Doctor</option>
-                    <option value = "administrador"> Administrador</option>
-                    <option value = "enfermeiro">Enfermeiro</option>
-                </select>
   
             
             <button class="cadastrado" type="submit" name="cadastrar">Cadastrar</button>
