@@ -57,7 +57,13 @@ if(isset($_POST['login'])){
             header("Location: medico.php");
             exit();
         }
+        else{
+            $error = "Senha incorreta";
+        }
+    }else{
+        $error = "Usuario inexistente";
     }
+    $stmt->close();
 }
 
 
@@ -101,6 +107,8 @@ if(isset($_POST['login'])){
         <div class="insira-container login-face">
             <form action="" method="post">
                 <h1>Login</h1>
+
+                <?php echo $error; ?>
                 
                 <input type="email" placeholder="Digite o e-mail" name="email" required>
                 <input type="password" placeholder="Digite a senha" name="password" required>
