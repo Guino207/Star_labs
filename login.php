@@ -10,7 +10,6 @@ if(isset($_POST['cadastrar'])){
     $password = $_POST['password'];
     $escolha = $_POST['escolha'];
 
-    $_SESSION['username'] = $_POST['name'];
 
     $has = password_hash($password, PASSWORD_DEFAULT);
 
