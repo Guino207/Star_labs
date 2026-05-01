@@ -34,6 +34,14 @@ if(isset($_POST['cadastrar'])){
     }
 }
 
+if(isset($_POST['login'])){
+    $email = $_POST['email'];
+    $senha = $_POST['password'];
+
+    $sql = "SELECT id, name, email, password, escolha FROM func WHERE email = ?";
+
+    
+}
 
 
 ?>
