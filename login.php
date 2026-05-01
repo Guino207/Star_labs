@@ -40,7 +40,14 @@ if(isset($_POST['login'])){
 
     $sql = "SELECT id, name, email, password, escolha FROM func WHERE email = ?";
 
-    
+    $stmt = $c->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if($result->num_rows === 1){
+        $usuario = $result->fetch_assoc();
+    }
 }
 
 
