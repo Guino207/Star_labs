@@ -33,7 +33,9 @@ if(isset($_POST['cadastrar'])){
         $stmt->close();
     }
 }
-$c->close();
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -72,14 +74,16 @@ $c->close();
         </form></div>
 
         <div class="insira-container login-face">
-            <form action="">
+            <form action="" method="post">
                 <h1>Login</h1>
                 
-                <input type="email" placeholder="Digite o e-mail" required>
-                <input type="password" placeholder="Digite a senha" required>
-                <button login-conta>enviar</button>
+                <input type="email" placeholder="Digite o e-mail" name="email" required>
+                <input type="password" placeholder="Digite a senha" name="password" required>
+                <button login-conta name="login">Enviar</button>
                 <a href="#">esqueceu a senha?</a> 
             </form></div>
+
+
             <div class="toggle-container">
                 <div class="toggle">
                     <div class="toggle-painel  toggle-left">
