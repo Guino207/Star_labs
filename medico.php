@@ -276,15 +276,15 @@
                 
             </div>
             <div class="modalmedicos-body">
-                <form id="formMedico" onsubmit="cadastrarMedico(event)">
+                <form id="formMedico" onsubmit="cadastrarMedico(event)" method="post">
                     <div class="form-group">
                         <label>Nome:</label>
-                        <input type="text" id="nome" required>
+                        <input type="text" id="nome" required name="name">
                     </div>
                    
                     <div class="form-group">
                         <label>Especialidade</label>
-                        <select id="especialidade">
+                        <select id="especialidade" name="especialidade">
                             <option value="">Selecione</option>
                             <option value="Cardiologia">Cardiologia</option>
                             <option value="Pediatria">Pediatria</option>
@@ -297,17 +297,17 @@
                     </div>
                     <div class="form-group">
                         <label>E-mail</label>
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" required name="email">
                     </div>
                     <div class="form-group">
                         <label>Telefone</label>
-                        <input type="tel" id="telefone" required>
+                        <input type="tel" id="telefone" required name="telefone">
                     </div>
                 </form>
             </div>
             <div class="modalmedicos-footer">
                 <button class="btn btn-cancel" onclick="fecharModalAdicionar()">Cancelar</button>
-                <button class="btn btn-save" onclick="cadastrarMedico()">Salvar Médico</button>
+                <button class="btn btn-save" onclick="cadastrarMedico()" name="Salvar">Salvar Médico</button>
             </div>
         </div>
     </div>
