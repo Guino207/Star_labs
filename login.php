@@ -17,7 +17,6 @@ if(isset($_POST['cadastrar'])){
     if(empty($name) or empty($email) or empty($password) or empty($escolha)){
         $mensagem = "Precisa preencher todos os campos!";
     }else{
-        $sql = "INSERT INTO func(name,email,password,escolha VALUES('Domingos Pedro','domingosPedro@gmail.com','123456','administrador')";
         
         $sql = "INSERT INTO func(name,email,password,escolha) VALUES(?,?,?,?)";
 
