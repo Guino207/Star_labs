@@ -20,3 +20,16 @@ CREATE TABLE IF NOT EXISTS paciente(
     email VARCHAR(200) NOT NULL,
     telefone INT UNIQUE NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS medico(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    especialidade VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    telefone INT UNIQUE NOT NULL
+    );
+
+
+
+
+    
