@@ -47,6 +47,16 @@ if(isset($_POST['login'])){
 
     if($result->num_rows === 1){
         $usuario = $result->fetch_assoc();
+
+        if(password_verify($senha, $usuario['password'])){
+            $_SESSION['usuario_id'] = $usuario['id'];
+            $_SESSION['username'] = $usuario['username'];
+            $_SESSION['usuario_email'] = $usuario['email'];
+            $_SESSION['usuario_escolha'] = $usuario['escolha'];
+
+            header("Location: medico.php");
+            exit();
+        }
     }
 }
 
