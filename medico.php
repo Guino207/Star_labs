@@ -29,7 +29,7 @@
 
     
       <div class="header">
-        <div class="welcome" id="welcome-text">Bem-vindo, Dr!  <?php echo $_SESSION['username']; ?></div>
+        <div class="welcome" id="welcome-text">Bem-vindo,Administrador!</div>
         <div style="color: #666;"></div>
       </div>
 
