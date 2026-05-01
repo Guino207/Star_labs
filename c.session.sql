@@ -1,0 +1,23 @@
+USE ADM;
+
+CREATE TABLE IF NOT EXISTS func(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    escolha VARCHAR(50)
+);
+
+INSERT INTO func(name, email, password, escolha) 
+VALUES(
+    'Domingos Pedro',
+    'domingosPedro123@gmail.com',
+    '123456',
+    'dotor');
+
+CREATE TABLE IF NOT EXISTS paciente(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(200) NOT NULL,
+    telefone INT UNIQUE NOT NULL
+);
