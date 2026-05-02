@@ -1,0 +1,840 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+
+  .header {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    
+    width: 240px;
+    height: 100vh;
+    background: #0b1c4d;
+    color: white;
+    padding: 20px;
+    color: white;
+    padding: 20px 0;
+
+
+  }
+
+  .sidebar .logo {
+    padding: 0 20px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4da3ff;
+  }
+
+
+  
+    
+  .sidebar h2 {
+    margin-bottom: 30px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+  }
+  
+  .sidebar li {
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+  }
+  
+  .sidebar li:hover {
+    color: #02124c;
+    background-color: aliceblue;
+    font-weight: bold;
+    border-left: 4px solid #0080ff;
+    transition: all 0.10s ease-in-out;
+    border-radius: 6px;
+  }
+  
+  .sidebar .active {
+    background: #1f3c88;
+  }
+  
+
+
+
+
+
+
+
+  /* Main Content */
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .header {
+    background: white;
+    padding: 20px 30px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .welcome {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+  }
+
+  .content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+  }
+
+  /* azul*/
+  
+
+.azul{
+    margin-top: 40px;
+    align-items: center;
+    padding: 30px 50px;
+    background: linear-gradient(to right, #173190 ,#879ade);
+    width: 100%;
+    height: 150px;
+    display: flex;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    
+}
+
+
+
+.letras-azul{
+    margin: 10px;
+}
+
+.azul p{
+    color: white;
+    font-weight: 300;
+    font-size: 18px;
+    
+}
+.azul h3{
+    color: aliceblue;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 10px 0;
+
+}
+
+.azul img{
+    margin-right: 20px;
+    background: white;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.pages{
+    width: 50%;
+    padding: 30px;
+    background-color: aliceblue;
+    border-radius: 6px;
+    margin-top: 40px;
+    margin-left: 50%;
+    border: 1px solid gray;
+    height: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+}
+
+
+
+
+
+  /* Cardes*/
+ 
+
+
+.cardform:hover{
+    background-color: #174db26e;
+    transition: all 0.3s ease-out;
+    transform: scale(1.1) translateZ(0);
+    color: aliceblue;
+
+}
+
+.cardform{
+  
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+.spacecards{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+
+}
+.topocard{
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.topocard h4{
+  font-size: 14px;
+  color: #555;
+}
+
+.cardform h1{
+  font-size: 28px;
+  margin-bottom: 5px;
+
+}
+
+.verde {
+  color: green;
+  font-size: 12px;
+}
+
+
+
+.destaque h4,
+.destaque h1,
+.destaque p {
+  color: white;
+}
+
+.destaque .icones {
+  background: rgba(255,255,255,0.2);
+}
+.icones{
+  width: 50px;
+  background-color: white;
+  border-radius: 8px;
+}
+
+
+
+
+
+
+
+
+ 
+  
+
+  /* Placeholder para outras seções */
+  .section {
+    display: none;
+  }
+
+  .section.active {
+    display: block;
+  }
+  .section h2{
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .placeholder {
+    background: white;
+    border-radius: 12px;
+    padding: 300px;
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ddd;
+    
+  }
+
+/*paciente*/
+
+
+  .container-pacientes{
+    width:100%;
+    margin-bottom:100%;
+    padding: 10px 50px;
+  }
+  .header-tabelapaciente{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background: linear-gradient(to right ,#173190 ,#879ade);
+    padding:15px;
+    border-radius:10px;
+    color:white;
+    font-size: 20px;
+  }
+  .header-tabelapaciente input{
+    padding:8px;
+    border:none;
+    border-radius:5px;
+    outline:none;
+  }
+  .header-tabelapaciente button{
+    padding:8px 15px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    color:white;
+  }
+  .add-btn{
+    background:green;
+    font-size: 18px;
+}
+  .delete-all{
+    background:red;
+    font-size: 18px;
+}
+  /* tbestilo*/
+  table{
+    width:100%;
+    margin-top:20px;
+    border-collapse:collapse;
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+  }
+  th,td{
+    padding:12px;
+    text-align:center;
+  }
+  th{
+    background:#1e3a8a;
+    color:white;
+  }
+  tr:nth-child(even){
+    background:#f1f1f1;
+  }
+  /* */
+  .edit{
+    background:blue;
+    color:white;
+    padding:5px 10px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size: 20px;
+  }
+  .delete{
+    background:red;
+    color:white;
+    padding:5px 10px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    font-size: 20px;
+  }
+  /* M*/
+  .modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:none;
+    justify-content:center;
+    align-items:center;
+  }
+  .modal.active{
+    display:flex;
+  }
+  .modal-content{
+    background: #fff;
+    width: 350px;
+    margin: 8% auto;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    height: 380px;
+    position: relative;
+    
+  }
+  
+  .modal-content h3{
+    font-size: 20px;
+    color: #173190;
+    
+  }
+  #form button{
+    width:100%;
+    max-width: 100px;
+    padding:10px 12px;
+    border:none;
+    background:#1e3a8a;
+    color:white;
+    cursor:pointer;
+    border-radius: 8px;
+    
+    margin-top:15px ;
+    
+
+
+    
+  }
+
+
+ 
+  .close{
+    background:red;
+  }
+
+  #form input{
+    outline: none;
+    border: none;
+    background-color: aliceblue;
+    border-radius: 6px;
+    margin: 8px 0;
+    padding: 10px;
+    margin-top: 10px;
+    max-width:  300px;
+    width: 90%;
+    margin-top: 20px;
+    
+    
+  }
+
+
+  #close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #173190;
+    
+}
+
+
+
+  /*botao*/
+  #botao{
+    color: white;
+    padding: 10px 20px ;
+    background-color: #173190;
+    border-radius: 8px;
+    font-size: 18px;
+
+
+
+
+  }
+
+
+
+  /*medicostela*/
+  .logotipo{
+    padding: 10px 15px;
+    width: 30px;
+  }
+
+
+  #div{
+    background:#f8f9fa; 
+    padding:12px; 
+    margin:8px 0;
+     border-radius:8px; 
+     border-left:4px solid #007bff;
+  }
+  
+.topo-medico{
+    background:linear-gradient(to right , #173190 ,#879ade);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 10px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    border-radius: 8px;
+}
+
+
+.container-pramedicos{
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 10px;
+}
+
+
+.btn-add {
+    background-color: #1f3c88;
+    color: white;
+    padding: 10px 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background-color: #0056b3;
+}
+
+#tabelaMedicos {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+   .itemtabela th {
+    background-color: #1e3a8a;
+    padding: 14px 10px;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    font-size: 18px;
+    border-bottom: 2px solid #eee;
+}
+
+ .itemtabela td {
+    padding: 18px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+ .itemtabela  tr:hover {
+    background-color: #f8fbff;
+}
+
+.especialidade {
+    background-color: #e3f2fd;
+    color: #0b1c4d;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    display: inline-block;
+}
+
+.btn-agenda {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-agenda:hover {
+    background-color: #218838;
+}
+
+
+
+.modalmedicos {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalmedicos-content {
+    background: white;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+}
+
+.modalmedicos-header {
+    padding: 10px 15px;
+    background: #0b1c4d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+
+.modalmedicos-body {
+    padding: 25px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.itemtabela label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+  .itemtabela input, select {
+    width: 100%;
+    padding: 15px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+
+}
+.modalmedicos-body input{
+  width: 100%;
+  height: 30px;
+  outline: none;
+  border-radius: 8px;
+  border: none;
+  background-color: aliceblue;
+
+
+}
+
+.modalmedicos-body select{
+  width: 100%;
+  outline: none;
+  height: 20px;
+  border:none ;
+  background-color: aliceblue;
+  color: #0056b3;
+
+
+}
+
+.modalmedicos-body option{
+  color: #02124c;
+}
+
+
+
+.modalmedicos-footer {
+    padding: 15px 25px;
+    background: #f8f9fa;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-cancel {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-save {
+    background:#0b1c4d;
+    color: white;
+}
+
+
+#modalAgenda .modalmedicos-content {
+    max-width: 500px;
+    width: 70%;
+    height: 70%;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 15px;
+    padding: 15px 5px;
+    
+    
+}
+
+.calendar-header {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 0;
+    background: #f8f9fa;
+}
+
+.calendar-day {
+    background: white;
+    border: 1px solid #eee;
+    min-height: 30px;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    
+}
+
+.calendar-day:hover {
+    background: #f0f8ff;
+}
+
+.calendar-day.has-appointment {
+    position: relative;
+}
+
+.calendar-day.has-appointment::after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 8px;
+    height: 8px;
+    background: #0b1c4d;
+    border-radius: 50%;
+}
+
+.day-number {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+
+/*relatorio*/
+
+
+.relat{
+  padding: 50%;
+
+}
+.top h3{
+  font-weight: 600;
+  color: white;
+
+
+}
+
+.temadopaciente{
+  margin-right:500px ;
+}
+.top {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+  background: linear-gradient(to right , #173190 ,#879ade);
+  color: white;
+  padding: 10px 10px;
+  border-radius: 8px;
+
+}
+.btn {
+  background: linear-gradient(to right ,#173190 );
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+.filtros {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+.filtros input, .filtros select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.filtros button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 10px;
+}
+.card {
+  background: white;
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+}
+.card p {
+  font-size: 19px;
+  font-weight: bold;
+  color: #02124c;
+}
+
+.card:hover{
+  background-color: #174db26e;
+  transition: all 0.3s ease-out;
+  transform: scale(1.1) translateZ(0);
+}
+
+.graficos {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: center;
+}
+.grafico {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.graficos p{
+  font-weight: 500;
+  color: #173190;
+}
+
+
+/*grafico*/
+
+h2 {
+  margin-bottom: 20px;
+}
