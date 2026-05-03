@@ -3,11 +3,11 @@
       
       const nome = document.getElementById('nomear').value;
       const dataNascimento = document.getElementById('data-nascimento').value;
-      const genero = document.getElementById('genero').value;
+      const email = document.getElementById('email').value;
       const telefone = document.getElementById('telefone').value;
       const motivo = document.getElementById('motivo').value;
     
-      const dadosModal = `Nome: ${nome}\nData de Nascimento: ${dataNascimento}\nGênero: ${genero}\nTelefone: ${telefone}\nMotivo: ${motivo}`;
+      const dadosModal = `Nome: ${nome}\nData de Nascimento: ${dataNascimento}\nEmail: ${email}\nTelefone: ${telefone}\nMotivo: ${motivo}`;
       document.getElementById('dados-modal').innerText = dadosModal;
       
       document.getElementById('modal').classList.remove('hidden');
