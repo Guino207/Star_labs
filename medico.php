@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -79,7 +82,6 @@
     </div>
 
 
-
     <div class="cardform">
         <div class="topocard">
             <h4>Consultas Pendentes</h4>
@@ -119,11 +121,10 @@
 
         <div class="container-pacientes">
         <div class="header-tabelapaciente">
-          <h2>Gestao de Pacientes</h2>
+          <h2>Gestão de Pacientes</h2>
           <input type="text" id="search" placeholder="Pesquisar...">
           <div>
             <button class="add-btn" onclick="openModal()">+ Adicionar</button>
-            <button class="delete-all" onclick="deleteAll()">Excluir Todos</button>
           </div>
         </div>
         <table>
@@ -136,20 +137,30 @@
               <th>excluir</th>
             </tr>
           </thead>
-          <tbody id="tableBody"></tbody>
+          <tbody id="tableBody">
+            <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            </tr>
+          </tbody>
         </table>
       </div>
+
+
       
       <div class="modal" id="modal">
         <div class="modal-content">
           <h3>Edite</h3>
           
           <span    id="close" onclick="fecharModalAdicionar()" style="cursor:pointer; font-size:24px;">×</span>
-          <form id="form">
-            <input type="text" id="nome" placeholder="Nome" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="text" id="phone" placeholder="Telefone" required>
-            <button type="submit">Salvar</button>
+          <form id="form" method="post">
+            <input type="text" id="nome" placeholder="Nome" required name="name">
+            <input type="email" id="email" placeholder="Email" required name="email">
+            <input type="text" id="phone" placeholder="Telefone" required name="telefone">
+            <button type="submit" name="Edite">Salvar</button>
 
           </form>
         </div>
@@ -237,7 +248,7 @@
           <div class="container-pacientes">
           <div class="topo-medico">
             
-            <h2>Gestao de Medicos</h2>
+            <h2>Gestão de Medicos</h2>
             <button class="btn-add" onclick="abrirModalAdicionar()">
                 Novo Medico
             </button>
@@ -250,12 +261,44 @@
                             <th>Nome</th>
                             <th>Especialidade</th>
                             <th>Contato</th>
-                            <th>Agenda</th>
+                            <th>Email</th>
                             <th>Apagar</th>
                         </tr>
                     </thead>
-                    <tbody id="corpoTabela">
+                    <?php
+                    require_once 'conexion.php';
+                    
+                    if(isset($_POST['Salvar'])){
+                        $name = $_POST['name'];
+                        $especialidade = $_POST['especialidade'];
+                        $email = $_POST['email'];
+                        $telefone = $_POST['telefone'];
+
+                        if(empty($name) or empty($especialidade) or empty($email) or empty($telefone)){
+                            $mensagem = "Precisa preencher todos os campos!";
+                        }else{
+                            $sql = "INSERT INTO medico(name,especialidade,email,telefone VALUES(?,?,?,?)";
+                            $stmt = $pdo->prepare($sql);
+                            $stmt->execute([$name,$especialidade,$email,$telefone]);
+
+                            echo "Prontos!";
+                        }
+
+                        $result = $pdo->query("SELECT * FROM medico");
+                        while ($row = $result->fetch()){
+
                         
+                    }
+                    ?>
+                    <tbody>
+                    <tr>
+                    <td><?php echo $row['id'] ?></td>
+                    <td><?php echo $row['especialidade']; ?></td>
+                    <td><?php echo $row['email']; ?></td>
+                    <td><?php echo $row['telefone']; ?></td>
+                    <td><button type="submit">Excluir</button></td>
+                    </tr>    
+                    <?php }; ?>
                     </tbody>
                 </table>
             </div>
@@ -277,7 +320,7 @@
                    
                     <div class="form-group">
                         <label>Especialidade</label>
-                        <select id="especialidade" name="especialidade">
+                        <select    class=" especial"    id="especialidade"  >
                             <option value="">Selecione</option>
                             <option value="Cardiologia">Cardiologia</option>
                             <option value="Pediatria">Pediatria</option>
@@ -285,7 +328,7 @@
                             <option value="Neurologia">Neurologia</option>
                             <option value="Ginecologia">Ginecologia</option>
                             <option value="Dermatologia">Dermatologia</option>
-                            <option value="Clínica Geral">Clínica Geral</option>
+                            <option value="Clínica Geral" sodium_crypto_kx_client_session_keys>Clínica Geral</option>
                         </select>
                     </div>
                     <div class="form-group">
