@@ -39,7 +39,7 @@ if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $senha = $_POST['password'];
     
-    $sql = "SELECT id, name, email, password, escolha FROM func WHERE email = ?";
+    $sql = "SELECT id, name, email, password FROM func WHERE email = ?";
     $stmt = $c->prepare($sql);  
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -54,7 +54,7 @@ if (isset($_POST['login'])) {
             $_SESSION['usuario_email'] = $usuario['email'];
             $_SESSION['usuario_escolha'] = $usuario['escolha'] ?? '';
             
-            header("Location: medico.ph");
+            header("Location: medico.php");
             exit();
         } else {
             $error = "Senha incorreta!";
