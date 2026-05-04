@@ -78,14 +78,7 @@
         <h1>0</h1>
     </div>
 
-    <div class="cardform">
-        <div class="topocard">
-            <h4>Relatorios diarios</h4>
-            <img src="./img/report.png"   class="icones">
-        </div>
-        <h1>0</h1>
-        <p>Leitos ocupados</p>
-    </div>
+
 
     <div class="cardform">
         <div class="topocard">
