@@ -1,22 +1,29 @@
 <?php
 session_start();
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 require_once 'conexion.php';
 
 
 if(isset($_POST['cadastrar'])){
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $senha = $_POST['senha'];
     $password = $_POST['password'];
     
 
 
     $has = password_hash($password, PASSWORD_DEFAULT);
 
-    if(empty($name) or empty($email) or empty($password)){
+    if(empty($name) or empty($email) or empty($senha) or empty($password)){
         $mensagem = "Precisa preencher todos os campos!";
     }else{
-        
+
+    if($senha != $password){
+        $error = "Senha precisa ser igual";
+    }else{
         $sql = "INSERT INTO func(name,email,password) VALUES(?,?,?)";
 
         $stmt = $c->prepare($sql);
@@ -24,14 +31,18 @@ if(isset($_POST['cadastrar'])){
         $stmt->bind_param("sss", $name, $email, $has);
 
         if($stmt->execute()){
-            include_once 'medico.php';
+            header("Location: medico.php");
         }else{
             $mensagem = $c->error;
-            echo $mensagem;
         }
         $stmt->close();
     }
+
 }
+}
+
+
+
 
 if(isset($_POST['login'])){
     $email = $_POST['email'];
@@ -62,6 +73,7 @@ if(isset($_POST['login'])){
         $error = "Usuario inexistente";
     }
     $stmt->close();
+    $c->close();
 }
 
 
@@ -89,6 +101,7 @@ if(isset($_POST['login'])){
             <input type="email" placeholder="Digite o e-mail" name="email" required>
             <input type="password" placeholder="Digite a senha" name="senha" required>
             <input type="password" name="password" placeholder="Confirme a senha" required>
+
   
             
             <button class="cadastrado" type="submit" name="cadastrar">Cadastrar</button>
@@ -98,15 +111,12 @@ if(isset($_POST['login'])){
             <form action="" method="post">
                 <h1>Login</h1>
 
-                <?php echo $error; ?>
                 
                 <input type="email" placeholder="Digite o e-mail" name="email" required>
                 <input type="password" placeholder="Digite a senha" name="password" required>
                 <button login-conta name="login">Enviar</button>
                 <a href="#">esqueceu a senha?</a> 
             </form></div>
-
-
             <div class="toggle-container">
                 <div class="toggle">
                     <div class="toggle-painel  toggle-left">
