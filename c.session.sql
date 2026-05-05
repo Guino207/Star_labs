@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS func(
 
 
 
-INSERT INTO func(name, email, password, escolha) 
+INSERT INTO func(name, email, password) 
 VALUES(
     'Domingos Pedro',
     'domingosPedro123@gmail.com',
